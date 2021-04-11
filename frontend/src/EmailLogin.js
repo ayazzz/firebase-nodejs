@@ -18,13 +18,7 @@ class EmailLogin extends React.Component{
     handleChange(event){
         this.setState({
             [event.target.name]: event.target.value
-        });
-
-        // var partialState = {};
-        // partialState[event.target.name] = event.target.value;
-        // this.setState(partialState);
-
-        //this.setState({email: event.target.value})        
+        });        
     }
     
     async handleSubmit(event) {
@@ -57,8 +51,9 @@ class EmailLogin extends React.Component{
             </div>
             <div>
                 <label for="user">Enter your email: </label>
+                <br/>
                 <input 
-                    name="email"
+                    name="user"
                     type="email" 
                     placeholder="insert a valid email" 
                     required
@@ -68,8 +63,9 @@ class EmailLogin extends React.Component{
             </div>
             <div>
                 <label for="pwd">Enter your password: </label>
+                <br/>
                 <input
-                    name="password"
+                    name="pwd"
                     type="password"
                     placeholder="insert a password"
                     required

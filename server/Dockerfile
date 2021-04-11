@@ -1,6 +1,5 @@
 FROM node:15.9.0
 
-
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -18,8 +17,11 @@ RUN json -I -f package.json -e "this.scripts.start='nodemon index.js'"
 
 RUN npm install firebase-admin
 
-
 ADD src /app
+
+ENV PORT=4000
+
+EXPOSE ${PORT}
 
 #ENTRYPOINT [ "sleep", "infinity" ]
 ENTRYPOINT ["npm","run","start"]

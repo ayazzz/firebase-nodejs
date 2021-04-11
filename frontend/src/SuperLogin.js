@@ -6,20 +6,15 @@ import EmailLogin from "./EmailLogin";
 import ResetPassword from "./ResetPassword"
 
 export default function SuperLogin() {
-    return(
+    return (
         <div>
-            <p>
-                <Login />
-            </p>
-            <p>
-                <EmailRegister />
-            </p>
-            <p>
-                <EmailLogin />
-            </p>
-            <p>
-                <ResetPassword />
-            </p>
+            <Login />
+
+            <EmailRegister />
+
+            <EmailLogin />
+
+            <ResetPassword />
         </div>
     );
 }

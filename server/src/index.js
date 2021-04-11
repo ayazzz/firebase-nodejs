@@ -32,5 +32,6 @@ app.get("/books", (request, response) => {
   return response.send({ books });
 });
 
-app.listen(4000, () => console.log("The server is running at PORT 4000"));
+const port = process.env.PORT || 4000;
+app.listen(port, () => console.log("The server is running at PORT " + port));
 

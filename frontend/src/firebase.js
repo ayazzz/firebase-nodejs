@@ -1,9 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-const config = require('./firebaseConfig.json');
-
-const firebaseConfig = config
+const firebaseConfig = require('./firebaseConfig.json');
 
 firebase.initializeApp(firebaseConfig);
 
