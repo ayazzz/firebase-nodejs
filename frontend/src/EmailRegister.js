@@ -15,6 +15,7 @@ class EmailRegister extends React.Component {
     }
 
     handleChange(event) {
+        console.log(event);
         this.setState({
             [event.target.name]: event.target.value
         });
@@ -55,10 +56,10 @@ class EmailRegister extends React.Component {
                     <h3>Register with email</h3>
                 </div>
                 <div>
-                    <label htmlFor="user">Enter your email: </label>
+                    <label htmlFor="email">Enter your email: </label>
                     <br />
                     <input
-                        name="user"
+                        name="email"
                         type="email"
                         placeholder="insert a valid email"
                         required
@@ -67,10 +68,10 @@ class EmailRegister extends React.Component {
                     />
                 </div>
                 <div>
-                    <label htmlFor="pwd">Enter your password: </label>
+                    <label htmlFor="password">Enter your password: </label>
                     <br />
                     <input
-                        name="pwd"
+                        name="password"
                         type="password"
                         placeholder="insert a password"
                         required
@@ -79,7 +80,7 @@ class EmailRegister extends React.Component {
                     />
                 </div>
                 <div>
-                    <input type="submit" value="Register!" />
+                    <button type="submit">Register</button>
                 </div>
             </form>
         )

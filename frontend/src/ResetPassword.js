@@ -55,7 +55,7 @@ class ResetPassword extends React.Component {
                     />
                 </div>
                 <div>
-                    <input type="submit" value="Reset Password" />
+                    <button type="submit">Reset Password</button>
                 </div>
             </form>
         )

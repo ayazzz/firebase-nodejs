@@ -8,7 +8,7 @@
   
   .login-button {
     width: 200px;
-    height: 60px;
+    height: 40px;
     border: none;
     border-radius: 5px;
     color: white;
@@ -45,7 +45,7 @@
     color: white;
   }
 
-  input[type='submit'] {
+  button[type='submit'] {
     margin-top: 5px;
     height: 30px;
     border: none;
@@ -53,6 +53,5 @@
     color: white;
     background-color: #1978e4;
     font-weight: bold;
-    cursor: pointer;
     opacity: 0.8;
   }
