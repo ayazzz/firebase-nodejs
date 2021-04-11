@@ -43,7 +43,8 @@ class ResetPassword extends React.Component {
                     <h3>Reset Password</h3>
                 </div>
                 <div>
-                    <label for="email">Enter your email: </label>
+                    <label htmlFor="email">Enter your email: </label>
+                    <br />
                     <input
                         name="email"
                         type="email"

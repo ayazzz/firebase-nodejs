@@ -28,11 +28,16 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
+    padding-bottom: 6px;
   }
   
   .image {
     width: 100px;
     height: 150px;
+  }
+
+  label {
+    color: rgb(155, 155, 155);
   }
   
   h3,
@@ -41,6 +46,7 @@
   }
 
   input[type='submit'] {
+    margin-top: 5px;
     height: 30px;
     border: none;
     border-radius: 5px;

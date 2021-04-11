@@ -50,7 +50,7 @@ class EmailLogin extends React.Component{
                 <h3>Login with email</h3>
             </div>
             <div>
-                <label for="user">Enter your email: </label>
+                <label htmlFor="user">Enter your email: </label>
                 <br/>
                 <input 
                     name="user"
@@ -62,7 +62,7 @@ class EmailLogin extends React.Component{
                 />
             </div>
             <div>
-                <label for="pwd">Enter your password: </label>
+                <label htmlFor="pwd">Enter your password: </label>
                 <br/>
                 <input
                     name="pwd"
