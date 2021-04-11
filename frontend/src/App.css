@@ -11,12 +11,19 @@
     height: 40px;
     border: none;
     border-radius: 5px;
-    color: white;
-    background-color: #ea4335;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     opacity: 0.8;
+  }
+
+  .btn-google {    
+    color: white;
+    background-color: #ea4335;
+  }
+  .btn-yahoo {    
+    color: white;
+    background-color: #400090;
   }
   
   .login-button:hover, input[type='submit']:hover {

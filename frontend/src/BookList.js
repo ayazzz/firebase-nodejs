@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { auth } from "./firebase";
 
 
-function LoggedIn(props){
+function LoggedIn(props) {
   const books = props.books;
-  
+
   return (
     <div className="container">
       <h1>BookList</h1>
@@ -18,7 +20,7 @@ function LoggedIn(props){
   );
 }
 
-function NotLoggedIn(props){
+function NotLoggedIn(props) {
   const errorMessage = props.message
   return (
     <div>
@@ -28,6 +30,7 @@ function NotLoggedIn(props){
 }
 
 export default function BookList() {
+  const history = useHistory();
   //create state to store our book list
   const [books, setBooks] = useState([]);
   const [status, setStatus] = useState([]);
@@ -36,7 +39,7 @@ export default function BookList() {
   useEffect(() => {
     async function loadBooks() {
       //fetch the book list
-      
+
       const request = await fetch("http://localhost:4000/books", {
         //use the authorization
         headers: {
@@ -57,11 +60,27 @@ export default function BookList() {
     loadBooks();
   }, []);
 
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then((idToken) => {
+        if (localStorage.getItem("@token") !== idToken) {
+          console.log('update auth token');
+          localStorage.setItem("@token", idToken);
+        }
+      }).catch((err) => {
+        console.log(err);
+        localStorage.removeItem("@token");
+        history.push("/login");
+      });
+    } else {
+      localStorage.removeItem("@token");
+      history.push("/login");
+    }
+  });
 
-  
-  if (status === 200){
+  if (status === 200) {
     return <LoggedIn books={books} />
   } else {
-    return <NotLoggedIn message={message}/>
+    return <NotLoggedIn message={message} />
   }
 }

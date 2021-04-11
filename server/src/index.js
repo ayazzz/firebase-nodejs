@@ -28,8 +28,9 @@ const books = [
 //app.use("/", authMiddleware);
 app.use(authMiddleware);
 
-app.get("/books", (request, response) => {
-  return response.send({ books });
+app.get("/books", (req, res) => {
+  console.log("req.user:", req.user);
+  return res.send({ books });
 });
 
 const port = process.env.PORT || 4000;
